@@ -1,0 +1,20 @@
+<h1>ブログ一覧</h1>
+<p><%= notice %></p>
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+  
+  <% @blogs.each do |blog| %>
+  <tr>
+  <td><%= blog.title %></td>
+  <td><%= blog.content %></td>
+  <td><%= link_to "詳細を確認する", blog_path(blog.id) %></td>
+  <td><%= link_to "編集する", edit_blog_path(blog.id) %></td>
+  <td><%= link_to "削除する", blog_path(blog.id), method: :delete , data: { confirm: '本当に編集していいですか？' } %></td>
+  </tr>
+  <% end %>  
+  
+  </table>
+  <%= link_to '新しい記事を書く', new_blog_path %>
