@@ -1,0 +1,13 @@
+<h1>ブログ詳細</h1>
+
+<table>
+  <tr>
+        <th>タイトル</th>
+        <th>内容</th>
+  </tr>
+  <tr>
+      <td><%= @blog.title %></td>
+      <td><%= @blog.content %></td>
+  </tr>
+</table>
+<h2><%= link_to '一覧に戻る' ,blogs_path %></h2>
